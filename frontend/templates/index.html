@@ -3,7 +3,8 @@
 {% block title %}Página Inicial{% endblock %}
 
 {% block content %}
-<h2>Gerador de Loterias</h2>
+<h2>Gerador de Loterias </h2>
+<p>github.com/PortoVinicius</p>
 <div class="grid">
   <a href="{{ url_for('lotofacil') }}" class="card">Lotofácil</a>
   <a href="{{ url_for('megasena') }}" class="card">Mega-Sena</a>
@@ -13,4 +14,5 @@
   <a href="{{ url_for('timemania') }}" class="card">Timemania</a>
   <a href="{{ url_for('federal') }}" class="card">Federal</a>
 </div>
+
 {% endblock %}

@@ -7,6 +7,7 @@ Estrutura organizada para fácil manutenção e expansão, seguindo estilo CS50.
 
 ## 🗂 Estrutura do projeto
 
+```bash
 loterias-pwa-python/
 ├── frontend/
 │   ├── static/
@@ -37,6 +38,7 @@ loterias-pwa-python/
 │   └── requirements.txt
 │
 └── README.md
+```
 
 
 ---

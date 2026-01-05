@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Loterias{% endblock %}</title>
+
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <meta name="theme-color" content="#1b5e20">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+<header>
+    <div class="header-top">
+        <h1>Jascinto Loterias</h1>
+    </div>
+    <nav id="nav-menu">
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('lotofacil') }}">Lotofácil</a>
+        <a href="{{ url_for('megasena') }}">Mega-Sena</a>
+        <a href="{{ url_for('quina') }}">Quina</a>
+        <a href="{{ url_for('lotomania') }}">Lotomania</a>
+        <a href="{{ url_for('dupla_sena') }}">Dupla Sena</a>
+        <a href="{{ url_for('timemania') }}">Timemania</a>
+        <a href="{{ url_for('federal') }}">Federal</a>
+    </nav>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<script>
+    const menuBtn = document.getElementById("menu-btn");
+    const navMenu = document.getElementById("nav-menu");
+
+    menuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
+</script>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

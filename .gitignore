@@ -1,0 +1,14 @@
+# Diretório do ambiente virtual
+venv/
+
+# Arquivos e pastas de cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos de configuração do Python
+*.env
+*.egg-info/
+dist/
+build/

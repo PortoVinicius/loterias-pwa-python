@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<h2>Gerador de Loterias</h2>
+<div class="grid">
+  <a href="{{ url_for('lotofacil') }}" class="card">Lotofácil</a>
+  <a href="{{ url_for('megasena') }}" class="card">Mega-Sena</a>
+  <a href="{{ url_for('quina') }}" class="card">Quina</a>
+  <a href="{{ url_for('lotomania') }}" class="card">Lotomania</a>
+  <a href="{{ url_for('dupla_sena') }}" class="card">Dupla Sena</a>
+  <a href="{{ url_for('timemania') }}" class="card">Timemania</a>
+  <a href="{{ url_for('federal') }}" class="card">Federal</a>
+</div>
+{% endblock %}

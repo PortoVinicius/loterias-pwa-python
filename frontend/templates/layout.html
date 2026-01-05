@@ -15,19 +15,22 @@
 <body>
 
 <header>
-    <div class="header-top">
-        <h1>Jascinto Loterias</h1>
-    </div>
-    <nav id="nav-menu">
-        <a href="{{ url_for('index') }}">Início</a>
-        <a href="{{ url_for('lotofacil') }}">Lotofácil</a>
-        <a href="{{ url_for('megasena') }}">Mega-Sena</a>
-        <a href="{{ url_for('quina') }}">Quina</a>
-        <a href="{{ url_for('lotomania') }}">Lotomania</a>
-        <a href="{{ url_for('dupla_sena') }}">Dupla Sena</a>
-        <a href="{{ url_for('timemania') }}">Timemania</a>
-        <a href="{{ url_for('federal') }}">Federal</a>
-    </nav>
+  <div class="header-top">
+    <h1>Jacinto Loterias</h1>
+    <!-- Botão do menu -->
+    <button id="menu-toggle">&#9776;</button> <!-- ☰ -->
+  </div>
+
+  <nav id="nav-menu" class="collapsed">
+    <a href="{{ url_for('index') }}">Início</a>
+    <a href="{{ url_for('lotofacil') }}">Lotofácil</a>
+    <a href="{{ url_for('megasena') }}">Mega-Sena</a>
+    <a href="{{ url_for('quina') }}">Quina</a>
+    <a href="{{ url_for('lotomania') }}">Lotomania</a>
+    <a href="{{ url_for('dupla_sena') }}">Dupla Sena</a>
+    <a href="{{ url_for('timemania') }}">Timemania</a>
+    <a href="{{ url_for('federal') }}">Federal</a>
+  </nav>
 </header>
 
 <main>
@@ -45,6 +48,14 @@
 
 <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script>
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("nav-menu");
+
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("expanded");
+});
+</script>
 
 </body>
 </html>

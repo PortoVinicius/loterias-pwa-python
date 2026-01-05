@@ -161,3 +161,52 @@ button:active {
     grid-template-columns: 1fr;
   }
 }
+
+header {
+  background-color: #2a5daa;
+  color: white;
+  padding: 10px 20px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none; /* esconde em telas grandes */
+}
+
+#nav-menu {
+  margin-top: 10px;
+}
+
+#nav-menu a {
+  display: inline-block;
+  margin-right: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block; /* mostra botão em telas pequenas */
+  }
+  #nav-menu {
+    display: none; /* menu escondido inicialmente */
+    flex-direction: column;
+  }
+  #nav-menu a {
+    margin: 10px 0;
+  }
+  #nav-menu.expanded {
+    display: flex; /* menu aparece quando clicado */
+  }
+}

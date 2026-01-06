@@ -1,4 +1,4 @@
-const CACHE_NAME = "loterias-pwa-v2"; // novo cache para forçar atualização
+const CACHE_NAME = "loterias-pwa-v3"; // novo cache para forçar atualização
 
 const FILES_TO_CACHE = [
   "/",

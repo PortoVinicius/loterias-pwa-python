@@ -1,14 +1,6 @@
-const CACHE_NAME = "loterias-pwa-v3"; // novo cache para forçar atualização
+const CACHE_NAME = "loterias-pwa-v4";
 
-const FILES_TO_CACHE = [
-  "/",
-  "/lotofacil",
-  "/megasena",
-  "/quina",
-  "/lotomania",
-  "/dupla_sena",
-  "/timemania",
-  "/federal",
+const STATIC_FILES = [
   "/static/css/style.css",
   "/static/js/app.js",
   "/static/js/main.js",
@@ -19,9 +11,10 @@ const FILES_TO_CACHE = [
 
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(STATIC_FILES))
+      .then(() => self.skipWaiting())
   );
-  self.skipWaiting();
 });
 
 self.addEventListener("activate", event => {
@@ -37,6 +30,14 @@ self.addEventListener("activate", event => {
 
 self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request).then(response => response || fetch(event.request))
+    fetch(event.request)
+      .then(response => {
+        const responseClone = response.clone();
+        caches.open(CACHE_NAME).then(cache => {
+          cache.put(event.request, responseClone);
+        });
+        return response;
+      })
+      .catch(() => caches.match(event.request))
   );
 });

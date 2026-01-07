@@ -51,7 +51,8 @@ toggle.addEventListener("click", () => {
   menu.classList.toggle("expanded");
 });
 </script>
-<script src="/static/js/pwa-install.js"></script>
+
+<script src="{{ url_for('static', filename='js/pwa-install.js') }}"></script>
 
 </body>
 </html>

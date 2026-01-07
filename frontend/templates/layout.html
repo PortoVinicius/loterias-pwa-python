@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Loterias{% endblock %}</title>
+
     <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
     <meta name="theme-color" content="#2a5daa">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
 </head>
+
 <body>
 
 <header>
   <div class="header-top">
     <h1>Jacinto Loterias</h1>
-    <!-- Botão do menu -->
-    <button id="menu-toggle">&#9776;</button> <!-- ☰ -->
+    <button id="menu-toggle">&#9776;</button>
   </div>
 
-  <nav id="nav-menu" class="collapsed">
+  <nav id="nav-menu">
     <a href="{{ url_for('index') }}">Início</a>
     <a href="{{ url_for('lotofacil') }}">Lotofácil</a>
     <a href="{{ url_for('megasena') }}">Mega-Sena</a>
@@ -36,23 +36,24 @@
 
 <script>
   if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/service-worker.js")
-        .then(() => console.log("SW registrado com sucesso"))
-        .catch(err => console.log("Erro ao registrar SW:", err));
+      navigator.serviceWorker.register("{{ url_for('static', filename='service-worker.js') }}")
+        .then(() => console.log("Service Worker registrado com sucesso"))
+        .catch(err => console.error("Erro ao registrar Service Worker:", err));
   }
 </script>
+
 <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-<script>
-const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("nav-menu");
-
-toggle.addEventListener("click", () => {
-  menu.classList.toggle("expanded");
-});
-</script>
-
 <script src="{{ url_for('static', filename='js/pwa-install.js') }}"></script>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("nav-menu");
+
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("expanded");
+  });
+</script>
 
 </body>
 </html>

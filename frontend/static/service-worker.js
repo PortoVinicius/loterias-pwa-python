@@ -4,6 +4,7 @@ const STATIC_FILES = [
   "/static/css/style.css",
   "/static/js/app.js",
   "/static/js/main.js",
+  "/static/js/pwa-install.js",
   "/static/manifest.json",
   "/static/icons/icon-192.png",
   "/static/icons/icon-512.png"

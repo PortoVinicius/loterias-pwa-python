@@ -45,6 +45,36 @@
   }
 </script>
 
+    <!-- TOAST PWA -->
+<div id="pwa-toast" style="
+    display:none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    padding: 16px;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    z-index: 9999;
+    flex-direction: column;
+">
+    <strong style="font-size: 18px;">Instalar aplicativo</strong>
+    <p style="margin: 8px 0 16px;">Instale o app da Oficina para acesso rápido.</p>
+
+    <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button id="btn-close-toast" style="border:none;background:transparent;font-size:14px;cursor:pointer;">
+            Agora não
+        </button>
+
+        <button id="btn-install" style="padding:8px 14px;background:#28a745;color:white;border:none;border-radius:6px;cursor:pointer;">
+            Instalar
+        </button>
+    </div>
+</div>
+
 <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 <script src="{{ url_for('static', filename='js/pwa-install.js') }}"></script>

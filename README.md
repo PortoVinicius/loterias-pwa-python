@@ -1,7 +1,7 @@
 # Loterias PWA com Python
 
-Aplicação web PWA para geração de jogos de loteria, desenvolvida com **Flask**, **Jinja** e **JavaScript**.  
-Estrutura organizada para fácil manutenção e expansão, seguindo estilo CS50.
+Aplicação web PWA para geração de jogos de loteria, desenvolvida com **JavaScript**.  
+Estrutura organizada para fácil manutenção e expansão.
 
 ---
 
@@ -9,34 +9,23 @@ Estrutura organizada para fácil manutenção e expansão, seguindo estilo CS50.
 
 ```bash
 loterias-pwa-python/
-├── frontend/
-│   ├── static/
-│   │   ├── css/
-│   │   │   └── style.css
-│   │   ├── js/
-│   │   │   ├── app.js
-│   │   │   └── main.js
-│   │   ├── icons/
-│   │   │   ├── icon-192.png
-│   │   │   └── icon-512.png
-│   │   ├── manifest.json
-│   │   └── service-worker.js
-│   │
-│   └── templates/
-│       ├── layout.html
-│       ├── index.html
-│       ├── lotofacil.html
-│       ├── megasena.html
-│       ├── quina.html
-│       ├── lotomania.html
-│       ├── dupla_sena.html
-│       ├── timemania.html
-│       └── federal.html
-│
-├── backend/
-│   ├── app.py
-│   └── requirements.txt
-│
+├── index.html
+├── megasena.html    
+├── dupla_sena.html 
+├── federal.html   
+├── lotofacil.html 
+├── lotomania.html 
+├── megasena.html 
+├── quina.html 
+├── manifest.json
+├── service-worker.js
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+├── icons/
+│   ├── icon-192.png
+│   └── icon-512.png
 └── README.md
 ```
 
@@ -51,23 +40,20 @@ loterias-pwa-python/
   - Mega-Sena
   - Quina, entre outros
 - Geração de números aleatórios
-- Funciona offline (PWA)
-- Instalável no desktop e mobile
+- Instalável mobile
 
 ---
 
 ## ⚙️ Como executar
 
-1. Crie e ative o ambiente virtual:
-
+1. Abra o terminal/Prompt de Comando
 ```bash
-cd backend
-python3 -m venv venv
-source venv/bin/activate
-```
+git clone https://github.com/PortoVinicius/loterias-pwa-python.git
+cd loterias-pwa-python
 
-2. Instale dependências:
-```bash
-pip install -r requirements.txt
 ```
-# loterias-pwa-python
+2. Usando python
+```bash
+# Para Python 3
+python3 -m http.server 8000
+```

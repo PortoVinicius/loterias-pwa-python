@@ -1,4 +1,4 @@
-const CACHE_NAME = 'loterias-v8'; // aumente sempre que adicionar páginas/arquivos
+const CACHE_NAME = 'loterias-v9'; // aumente sempre que adicionar páginas/arquivos
 const FILES_TO_CACHE = [
   '/',
   '/index.html',
